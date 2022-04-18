@@ -9,7 +9,7 @@ export const DefaultStyle = createGlobalStyle`
   html, body, #root {
     height: 100%;
     width: 100%;
-    color: ${Colors.navyBlue200};
+    color: ${Colors.dirtyWhite300};
   }
   
   fieldset, h1, h2, h3, h4, h5, p {
