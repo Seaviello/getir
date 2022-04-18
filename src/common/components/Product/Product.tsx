@@ -31,6 +31,7 @@ const Container = styled.div`
 const Image = styled.img`
   border: 1px solid ${Colors.lilacPurple100};
   border-radius: ${Spacing.S}px;
+  background-color: ${Colors.white};
 `;
 
 const StyledPrice = styled(Price)`

@@ -3,12 +3,15 @@ import styled from 'styled-components';
 
 import { Router } from '../Router/Router';
 import { DefaultStyle } from './AppStyles';
+import { PageLayout } from './PageLayout';
 
 export const App = () => {
   return (
     <Container>
       <DefaultStyle />
-      <Router />
+      <PageLayout>
+        <Router />
+      </PageLayout>
     </Container>
   );
 };
