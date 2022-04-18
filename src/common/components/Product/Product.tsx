@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
-import { Product as ProductType } from '../../../features/listing/redux/store';
+import { Product as ProductType } from '../../../features/types';
 import { Colors } from '../../basics/Colors';
 import { Spacing } from '../../basics/Spacing';
 import { Price } from '../Price/Price';
@@ -9,16 +9,16 @@ import { Price } from '../Price/Price';
 export interface ProductProps {
   className?: string;
   product: ProductType;
-  children?: ReactElement;
+  addProduct?: (product: ProductType) => void;
 }
 
-export const Product = ({ className, product, children }: ProductProps): ReactElement => {
+export const Product = ({ className, product, addProduct }: ProductProps): ReactElement => {
   return (
     <Container className={className}>
       <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${product.id}.png`} />
       <StyledPrice>{product.price}</StyledPrice>
       <Name>{product.name}</Name>
-      {children}
+      {addProduct && <button onClick={() => addProduct(product)}>Add</button>}
     </Container>
   );
 };

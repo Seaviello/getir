@@ -16,7 +16,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "app": "PORT=3010 TSC_COMPILE_ON_ERROR=true react-scripts start",
+    "app": "PORT=3010 react-scripts start",
     "start": "npm run server && npm run app",
     "server": "json-server --watch server/db.json",
     "build": "react-scripts build",

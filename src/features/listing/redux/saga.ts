@@ -2,9 +2,9 @@ import { AxiosResponse } from 'axios';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { getProducts } from '../../../api/services';
+import { Product } from '../../types';
 import { fetchProductsErrorAction, fetchProductsSuccessAction, ListingActionsTypes } from './actions';
 import { selectListingProductsFilters } from './selectors';
-import { Product } from './store';
 
 export function* fetchProductsSaga() {
   try {

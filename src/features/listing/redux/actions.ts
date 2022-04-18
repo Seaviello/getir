@@ -1,4 +1,4 @@
-import { Product } from './store';
+import { Product } from '../../types';
 
 export enum ListingActionsTypes {
   FETCH_PRODUCTS = `@@listing/products/fetch`,
