@@ -1,7 +1,15 @@
 import { RequestStatus } from '../../../common/utils/RequestStatus';
 
 export interface Product {
-  id: string;
+  tags: string[];
+  price: number;
+  name: string;
+  description: string;
+  slug: string;
+  added: number;
+  manufacturer: string;
+  itemType: ProductType;
+  id: number;
 }
 
 export const ALL = '__all__';

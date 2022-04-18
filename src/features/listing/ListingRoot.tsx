@@ -1,22 +1,23 @@
 import React, { ReactElement, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import { Spacing } from '../../common/basics/Spacing';
+import { ListingProducts } from './components/ListingProducts/ListingProducts';
 import { fetchProductsAction } from './redux/actions';
-import { selectListingProducts } from './redux/selectors';
 
 export const ListingRoot = (): ReactElement => {
   const dispatch = useDispatch();
-  const products = useSelector(selectListingProducts);
 
   useEffect(() => {
     dispatch(fetchProductsAction());
   }, [dispatch]);
 
-  console.log(products);
-
-  return <Container>Root</Container>;
+  return (
+    <Container>
+      <ListingProducts />
+    </Container>
+  );
 };
 
 const Container = styled.div`
