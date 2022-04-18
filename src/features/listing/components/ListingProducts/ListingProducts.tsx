@@ -6,6 +6,7 @@ import { Spacing } from '../../../../common/basics/Spacing';
 import { Product } from '../../../../common/components/Product/Product';
 import { addProductAction } from '../../../basket/redux/actions';
 import { selectListingProducts } from '../../redux/selectors';
+import { ListingPagination } from './ListingPagination';
 
 export interface ListingProductsProps {
   className?: string;
@@ -21,6 +22,7 @@ export const ListingProducts = ({ className }: ListingProductsProps): ReactEleme
       {products?.value?.map((product) => (
         <Product product={product} key={product.id} addProduct={(product) => dispatch(addProductAction(product))} />
       ))}
+      <ListingPagination />
     </Container>
   );
 };

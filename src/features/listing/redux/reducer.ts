@@ -16,11 +16,13 @@ export const listingReducer: Reducer<ListingStore, RootAction> = (state = defaul
       };
     }
     case ListingActionsTypes.FETCH_PRODUCTS_SUCCESS: {
+      const { products, totalCount } = action.payload;
       return {
         ...state,
         products: {
-          value: action.payload,
+          value: products,
         },
+        totalCount,
       };
     }
     case ListingActionsTypes.FETCH_PRODUCTS_ERROR: {
@@ -30,6 +32,12 @@ export const listingReducer: Reducer<ListingStore, RootAction> = (state = defaul
           value: state.products.value,
           error: action.error,
         },
+      };
+    }
+    case ListingActionsTypes.CHANGE_PAGE: {
+      return {
+        ...state,
+        page: action.payload,
       };
     }
     default:

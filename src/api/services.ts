@@ -9,19 +9,19 @@ export const getProducts = ({
   sortField,
   sortOrder,
   page,
-  limit,
+  pageLimit,
   selectedProductType,
 }: {
   sortField: SortField;
   sortOrder: SortOrder;
-  page?: number;
-  limit?: number;
+  page: number;
+  pageLimit: number;
   selectedProductType: ProductType;
 }) =>
   axios.get(PRODUCT_URL, {
     params: {
-      _page: page || 1,
-      _limit: limit || 20,
+      _page: page,
+      _limit: pageLimit,
       _sort: sortField,
       _order: sortOrder,
       itemType: selectedProductType,

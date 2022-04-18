@@ -11,6 +11,8 @@ export interface ListingStore {
   selectedTags: Tag['name'][] | typeof ALL;
   selectedProductType: ProductType;
   page: number;
+  pageLimit: number;
+  totalCount: number;
 }
 
 export const defaultStore: ListingStore = {
@@ -22,5 +24,7 @@ export const defaultStore: ListingStore = {
   selectedBrands: ALL,
   selectedTags: ALL,
   selectedProductType: ProductType.MUG,
-  page: 0,
+  page: 1,
+  pageLimit: 16,
+  totalCount: 0,
 };
