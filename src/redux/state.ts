@@ -1,7 +1,9 @@
+import { defaultStore as listingDefaultStore, ListingStore } from '../features/listing/redux/store';
+
 export interface RootState {
-  /* part of state */
+  listing: ListingStore;
 }
 
 export const defaultState: RootState = {
-  /* part of defaultState */
+  listing: listingDefaultStore,
 };
