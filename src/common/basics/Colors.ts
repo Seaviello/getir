@@ -12,6 +12,7 @@ export enum Colors {
   dirtyWhite400 = '#C4C4C4',
   dirtyWhite300 = '#DFDEE2',
   dirtyWhite200 = '#E5E5E5',
+  dirtyWhite100 = '#F4F4F4',
 
   white = '#FFF',
   black = '#000',

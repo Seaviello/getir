@@ -16,13 +16,19 @@ export const PageLayout = ({ className, children }: PageLayoutProps): ReactEleme
     <Container className={className}>
       <Navigation />
       <PageContainer>
-        {children}
+        <Content>{children}</Content>
         <StyledFooter />
       </PageContainer>
     </Container>
   );
 };
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+`;
+
+const Content = styled.div``;
 
 const StyledFooter = styled(Footer)`
   margin-top: ${Spacing.XXL}px;
@@ -31,4 +37,8 @@ const StyledFooter = styled(Footer)`
 const PageContainer = styled.div`
   padding: ${Spacing.L}px ${Spacing.XXL}px;
   background-color: ${Colors.dirtyWhite200};
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;

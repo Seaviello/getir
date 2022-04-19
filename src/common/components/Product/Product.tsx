@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Product as ProductType } from '../../../features/types';
 import { Colors } from '../../basics/Colors';
 import { Spacing } from '../../basics/Spacing';
+import { Button, ButtonType } from '../Button/Button';
 import { Price } from '../Price/Price';
 
 export interface ProductProps {
@@ -22,7 +23,11 @@ export const Product = ({ className, product, addProduct }: ProductProps): React
       />
       <StyledPrice>{product.price}</StyledPrice>
       <Name>{product.name}</Name>
-      {addProduct && <button onClick={() => addProduct(product)}>Add</button>}
+      {addProduct && (
+        <StyledButton onClick={() => addProduct(product)} buttonType={ButtonType.PRIMARY}>
+          Add
+        </StyledButton>
+      )}
     </Container>
   );
 };
@@ -38,6 +43,11 @@ const Image = styled.img`
   background-color: ${Colors.white};
 `;
 
+const StyledButton = styled(Button)`
+  padding: ${Spacing.XXXS}px ${Spacing.S}px;
+  margin-top: auto;
+`;
+
 const StyledPrice = styled(Price)`
   margin-top: ${Spacing.XXS}px;
   height: ${Spacing.XL}px;
@@ -46,4 +56,5 @@ const StyledPrice = styled(Price)`
 const Name = styled.span`
   font-weight: bold;
   color: ${Colors.nightBlack100};
+  margin-bottom: ${Spacing.XS}px;
 `;

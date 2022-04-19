@@ -5,11 +5,11 @@ import { Colors } from '../../basics/Colors';
 
 export interface PriceProps {
   className?: string;
-  children: ReactElement | string | number;
+  children: number;
 }
 
 export const Price = ({ className, children }: PriceProps): ReactElement => {
-  return <Container className={className}>₺ {children}</Container>;
+  return <Container className={className}>₺ {children.toFixed(2)}</Container>;
 };
 
 const Container = styled.span`

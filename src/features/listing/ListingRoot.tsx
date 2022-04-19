@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
+import { Spacing } from '../../common/basics/Spacing';
 import { Basket } from '../basket/components/Basket/Basket';
 import { ListingFilters } from './components/ListingFilters/ListingFilters';
 import { ListingProducts } from './components/ListingProducts/ListingProducts';
@@ -17,17 +18,19 @@ export const ListingRoot = (): ReactElement => {
   return (
     <Container>
       <ListingFilters />
-      <StyledListingProducts />
-      <Basket />
+      <ListingProducts />
+      <StyledBasket />
     </Container>
   );
 };
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 296px 608px 296px;
+  grid-column-gap: ${Spacing.M}px;
 `;
 
-const StyledListingProducts = styled(ListingProducts)`
-  max-width: 608px;
+const StyledBasket = styled(Basket)`
+  align-self: flex-start;
 `;

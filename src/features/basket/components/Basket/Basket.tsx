@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { Colors } from '../../../../common/basics/Colors';
 import { Spacing } from '../../../../common/basics/Spacing';
+import { Price } from '../../../../common/components/Price/Price';
 import { addProductAction, removeProductAction } from '../../redux/actions';
 import { selectBasketProducts, selectBasketTotal } from '../../redux/selectors';
 import { BasketProduct } from './BasketProduct';
@@ -27,12 +28,24 @@ export const Basket = ({ className }: BasketProps): ReactElement => {
           onRemove={(product) => dispatch(removeProductAction(product))}
         />
       ))}
-      <span>{total}</span>
+      <Total>
+        <Price>{total}</Price>
+      </Total>
     </Container>
   );
 };
 
 const Container = styled.div`
   border: 8px solid ${Colors.skyBlue100};
+  background-color: ${Colors.white};
   padding: ${Spacing.M}px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Total = styled.div`
+  align-self: flex-end;
+  border: 2px solid ${Colors.skyBlue100};
+  padding: ${Spacing.M}px;
+  margin-top: ${Spacing.M}px;
 `;
