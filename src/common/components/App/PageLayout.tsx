@@ -16,7 +16,7 @@ export const PageLayout = ({ className, children }: PageLayoutProps): ReactEleme
     <Container className={className}>
       <Navigation />
       <PageContainer>
-        <Content>{children}</Content>
+        <div>{children}</div>
         <StyledFooter />
       </PageContainer>
     </Container>
@@ -27,8 +27,6 @@ const Container = styled.div`
   flex-direction: column;
   min-height: 100%;
 `;
-
-const Content = styled.div``;
 
 const StyledFooter = styled(Footer)`
   margin-top: ${Spacing.XXL}px;
