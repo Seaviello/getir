@@ -9,6 +9,7 @@ import { selectListingProductsFilters } from './selectors';
 export function* fetchProductsSaga() {
   try {
     const filterOptions: ReturnType<typeof selectListingProductsFilters> = yield select(selectListingProductsFilters);
+    console.log(filterOptions);
     const response: AxiosResponse<Product[]> = yield call(getProducts, filterOptions);
 
     yield put(
@@ -24,5 +25,8 @@ export function* fetchProductsSaga() {
 }
 
 export function* listingSaga() {
-  yield takeEvery([ListingActionsTypes.FETCH_PRODUCTS, ListingActionsTypes.CHANGE_PAGE], fetchProductsSaga);
+  yield takeEvery(
+    [ListingActionsTypes.FETCH_PRODUCTS, ListingActionsTypes.CHANGE_PAGE, ListingActionsTypes.CHANGE_SORT],
+    fetchProductsSaga,
+  );
 }

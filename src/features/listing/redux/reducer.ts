@@ -40,6 +40,14 @@ export const listingReducer: Reducer<ListingStore, RootAction> = (state = defaul
         page: action.payload,
       };
     }
+    case ListingActionsTypes.CHANGE_SORT: {
+      const { sortOrder, sortField } = action.payload;
+      return {
+        ...state,
+        sortField,
+        sortOrder,
+      };
+    }
     default:
       return state;
   }

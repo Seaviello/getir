@@ -15,7 +15,11 @@ export interface ProductProps {
 export const Product = ({ className, product, addProduct }: ProductProps): ReactElement => {
   return (
     <Container className={className}>
-      <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${product.id}.png`} />
+      <Image
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${product.id}.png`}
+        width={122}
+        height={122}
+      />
       <StyledPrice>{product.price}</StyledPrice>
       <Name>{product.name}</Name>
       {addProduct && <button onClick={() => addProduct(product)}>Add</button>}

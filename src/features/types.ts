@@ -29,7 +29,7 @@ export enum SortField {
 
 export enum SortOrder {
   ASC = 'asc',
-  DSC = 'dsc',
+  DESC = 'desc',
 }
 
 export enum ProductType {

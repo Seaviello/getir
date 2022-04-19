@@ -11,6 +11,7 @@ export const selectListingSelectedProductType = (state: RootState) => selectList
 export const selectListingPage = (state: RootState) => selectListingState(state).page;
 export const selectListingTotalCount = (state: RootState) => selectListingState(state).totalCount;
 export const selectListingPageLimit = (state: RootState) => selectListingState(state).pageLimit;
+export const selectListingProductType = (state: RootState) => selectListingState(state).selectedProductType;
 
 export const selectListingProductsFilters = createSelector(
   selectListingSortOrder,
